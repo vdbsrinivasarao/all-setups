@@ -29,5 +29,7 @@ mv kops-linux-amd64 /usr/local/bin/kops
 export KOPS_STATE_STORE=s3://kopsbyvdbsrao0425.k8s.local
 kops create cluster --name vdb.k8s.local --zones ap-south-1a --master-count=1 --master-size t2.medium --node-count=2 --node-size t2.medium
 kops update cluster --name vdb.k8s.local --yes --admin
+
+: kops delete cluster --name vdb.k8s.local --yes
 ~
 ~
