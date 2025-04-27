@@ -27,7 +27,7 @@ mv kops-linux-amd64 /usr/local/bin/kops
 #aws s3api create-bucket --bucket kopsbyvdbsrao0425.k8s.local --region ap-south-1
 #aws s3api put-bucket-versioning --bucket kopsbyvdbsrao0425.k8s.local --region ap-south-1 --versioning-configuration Status=Enabled
 export KOPS_STATE_STORE=s3://kopsbyvdbsrao0425.k8s.local
-kops create cluster --name vdb.k8s.local --zones ap-south-1a --master-count=1 --master-size t2.medium --node-count=2 --node-size t2.medium
+kops create cluster --name vdb.k8s.local --zones ap-south-1a --master-count=1 --master-size t2.medium --node-count=2 --node-size t2.micro
 kops update cluster --name vdb.k8s.local --yes --admin
 
 : kops delete cluster --name vdb.k8s.local --yes
